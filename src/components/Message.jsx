@@ -1,19 +1,21 @@
 import React from 'react'
+import UserImage from "../assets/img/user1.png"
 
 const Massage = () => {
   return (
-    <div className='massage'>
+    <div className='message owner'>
       
       <div className="messageInfo">
 
-        <img src="../assets/img/user1.png" alt="" />
+        <img src={UserImage} alt="" />
         <span>just now</span>
 
       </div>
+
       <div className="messageContent">
 
-        <p>hello</p>
-        <img src="../assets/img/user1.png" alt="" />
+        <p >hello</p>
+        <img src={UserImage} alt="" />
 
       </div>
 
