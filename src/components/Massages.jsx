@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Massages = () => {
+const Massages = () => {
   return (
     <div>Massages</div>
   )
 }
+
+export default Massages

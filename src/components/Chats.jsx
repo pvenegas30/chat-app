@@ -1,7 +1,13 @@
 import React from 'react'
 
-export const Chats = () => {
+const Chats = () => {
   return (
-    <div>Chats</div>
+    <div className='chats'>
+      
+
+
+    </div>
   )
 }
+
+export default Chats
