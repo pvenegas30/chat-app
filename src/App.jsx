@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 import Register from './pages/Register';
 
 function App() {

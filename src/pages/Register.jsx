@@ -5,8 +5,8 @@ const Register = () => {
     <div className='formContainer'>
       <div className='formWrapper'>
 
-        <span className='logo'></span>
-        <span className='title'></span>
+        <span className='logo'>LOGO</span>
+        <span className='title'>Login</span>
 
         <form>
           <input type="text" placeholder="display name"/>
