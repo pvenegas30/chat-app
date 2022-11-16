@@ -237,6 +237,76 @@ body{
                 cursor: pointer;
             }
         }
+
+        .messages{
+
+            background-color: #ddddf7;
+            padding: 10px;
+            height: calc(100% - 160px);
+
+            .message{
+
+                display: flex;
+                gap: 250px;
+
+                .messageInfo{
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                .messageContent{
+                    img{
+                        width: 50%;
+                    }
+                }
+                }
+            }
+        }
+
+        .input{
+
+            height: 50px;
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input{
+
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                color: #2f2d52;
+
+                &::placeholder{
+
+                    color: lightgray;
+                }
+
+                .send{
+
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        height: 24px;
+                        cursor: pointer;
+                    }
+
+                    button{
+                        border: none;
+                        padding: 10px 15px;
+                        color: #fff;background-color: #8da4f1;
+                    }
+                }
+            }
+        }
     
     }
 }
