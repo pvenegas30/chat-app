@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import Add from "../assets/img/addimage.png";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, storage } from "../firebase";
-import {
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
-import { async } from "@firebase/util";
+import React, { useState } from "react"
+import Add from "../assets/img/addimage.png"
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { auth, storage } from "../firebase"
+import { doc, setDoc } from "firebase/firestore"
+
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
 const Register = () => {
-  const [err, serErr] = useState(false)
+  const [err, setErr] = useState(false)
 
   const handleSubmit = async (e) => {
-
     e.preventDefault()
 
     const displayName = e.target[0].value
@@ -24,23 +20,30 @@ const Register = () => {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password)
 
+      const storageRef = ref(storage, displayName)
 
-      const storageRef = ref(storage, displayName);
-
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      const uploadTask = uploadBytesResumable(storageRef, file)
 
       uploadTask.on(
-
         (error) => {
-          setErr(true);
+          setErr(true)
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL) => {
-            await updateProfile(res.user,{
-
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
               displayName,
-              photoURL:downloadURL
-            });
+              photoURL: downloadURL,
+            })
+
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
+              displayName,
+              email,
+              photoURL: downloadURL,
+            })
+
+            //create empty user chats on firestore
+            await setDoc(doc(db, "userChats", res.user.uid), {});
           })
         }
       )
