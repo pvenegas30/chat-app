@@ -13,9 +13,9 @@ const Chat = () => {
         <span>Jane</span>
 
         <div className="chatIcons">
-          <BsFillCameraVideoFill/>
-          <BsPersonPlusFill/>
-          <BsList/>
+          <BsFillCameraVideoFill size={19}/>
+          <BsPersonPlusFill size={19}/>
+          <BsList size={21}/>
         </div>
 
       </div>
