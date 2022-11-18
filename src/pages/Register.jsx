@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+
 import Add from "../assets/img/addimage.png"
+import React, { useState } from "react"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth, db, storage } from "../firebase"
 import { doc, setDoc } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -74,7 +75,7 @@ const Register = () => {
           <button>Sign Up</button>
           {err && <span>Something went wrong</span>}
         </form>
-        <p>You do have an account? Login</p>
+        <p>You do have an account?<Link to="/login" className="tologin">Login</Link></p>
       </div>
     </div>
   )
