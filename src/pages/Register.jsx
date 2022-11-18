@@ -1,13 +1,15 @@
 import React, { useState } from "react"
 import Add from "../assets/img/addimage.png"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
-import { auth, storage } from "../firebase"
+import { auth, db, storage } from "../firebase"
 import { doc, setDoc } from "firebase/firestore"
-
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const [err, setErr] = useState(false)
+  const [err, setErr] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -18,14 +20,14 @@ const Register = () => {
     const file = e.target[3].files[0]
 
     try {
-      const res = await createUserWithEmailAndPassword(auth, email, password)
+      const res = await createUserWithEmailAndPassword(auth, email, password);
 
       const storageRef = ref(storage, displayName)
 
       const uploadTask = uploadBytesResumable(storageRef, file)
 
       uploadTask.on(
-        (error) => {
+        (err) => {
           setErr(true)
         },
         () => {
@@ -33,24 +35,24 @@ const Register = () => {
             await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
-            })
+            });
 
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
               email,
               photoURL: downloadURL,
-            })
+            });
 
             //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
-          })
-        }
-      )
+            navigate("/");
+          });
+        });
     } catch (err) {
       setErr(true)
     }
-  }
+  };
 
   return (
     <div className="formContainer">
