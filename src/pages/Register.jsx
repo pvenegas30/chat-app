@@ -1,9 +1,9 @@
-import Add from "../assets/img/addimage.png"
-import React, { useState } from "react"
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
-import { auth, db, storage } from "../firebase"
-import { doc, setDoc } from "firebase/firestore"
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import React, { useState } from "react";
+import Add from "../assets/img/addimage.png";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db, storage } from "../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
@@ -64,21 +64,19 @@ const Register = () => {
       <div className="formWrapper">
         <span className="logo">Chat App</span>
         <span className="title">Register</span>
-
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="display name" />
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
-          <input style={{ display: "none" }} type="file" id="file" />
-
+          <input required type="text" placeholder="display name" />
+          <input required type="email" placeholder="email" />
+          <input required type="password" placeholder="password" />
+          <input required style={{ display: "none" }} type="file" id="file" />
           <label htmlFor="file">
-            <img src={Add} alt=""></img>
-            <span>Add avatar image</span>
+            <img src={Add} alt="" />
+            <span>Add an avatar</span>
           </label>
 
-          <button disabled={loading}>Sign Up</button>
+          <button>Sign Up</button>
           {loading && "Uploading and compressing the image please wait..."}
-          {err && <span className="err">Something went wrong...</span>}
+          {err && <span className="err">Something went wrong</span>}
         </form>
         <p>You do have an account?<Link to="/login" className="tolink">Login</Link></p>
       </div>

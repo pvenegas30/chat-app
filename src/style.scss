@@ -24,7 +24,8 @@ body {
 }
 
 .formContainer {
-  background-color: rgb(18, 18, 18);
+  background-image: url("../src/assets/img/fondo.jpg");
+  background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -140,7 +141,9 @@ body {
 }
 
 .home {
-  background-color: rgb(27, 27, 27);
+  background-image: url("../src/assets/img/fondo.jpg");
+  background-size: cover;
+  
   height: 100vh;
   display: flex;
   align-items: center;
