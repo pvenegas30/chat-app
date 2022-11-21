@@ -25,6 +25,14 @@ body {
   align-items: center;
   justify-content: center;
 
+  .err{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-weight: bold;
+  }
+
   .formWrapper {
     background-color: white;
     padding: 20px 60px;

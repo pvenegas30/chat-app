@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../firebase";
+import { auth } from "../firebase";
 
 const Login = () => {
 
@@ -37,7 +36,7 @@ const Login = () => {
           <input style={{display:"none"}} type="file" id='file'/>
 
           <button>Sign In</button>
-
+          {err && <span className="err">Something went wrong...</span>}
         </form>
         <p>You don't have an account? <Link to="/register" className="toregister">Register</Link></p>
         

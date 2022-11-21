@@ -1,4 +1,3 @@
-
 import Add from "../assets/img/addimage.png"
 import React, { useState } from "react"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
@@ -9,35 +8,34 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
   const [err, setErr] = useState(false);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-
-    const displayName = e.target[0].value
-    const email = e.target[1].value
-    const password = e.target[2].value
-    const file = e.target[3].files[0]
+    setLoading(true);
+    e.preventDefault();
+    const displayName = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+    const file = e.target[3].files[0];
 
     try {
+      //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      const storageRef = ref(storage, displayName)
+      //Create a unique image name
+      const date = new Date().getTime();
+      const storageRef = ref(storage, `${displayName + date}`);
 
-      const uploadTask = uploadBytesResumable(storageRef, file)
-
-      uploadTask.on(
-        (err) => {
-          setErr(true)
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+      await uploadBytesResumable(storageRef, file).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          try {
+            //Update profile
             await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
             });
-
+            //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
@@ -48,10 +46,16 @@ const Register = () => {
             //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
             navigate("/");
-          });
+          } catch (err) {
+            console.log(err);
+            setErr(true);
+            setLoading(false);
+          }
         });
+      });
     } catch (err) {
-      setErr(true)
+      setErr(true);
+      setLoading(false);
     }
   };
 
@@ -72,8 +76,8 @@ const Register = () => {
             <span>Add avatar image</span>
           </label>
 
-          <button>Sign Up</button>
-          {err && <span>Something went wrong</span>}
+          <button disabled={loading}>Sign Up</button>
+          {err && <span className="err">Something went wrong...</span>}
         </form>
         <p>You do have an account?<Link to="/login" className="tologin">Login</Link></p>
       </div>
