@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
   const [err, setErr] = useState(false);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -80,7 +80,7 @@ const Register = () => {
           {loading && "Uploading and compressing the image please wait..."}
           {err && <span className="err">Something went wrong...</span>}
         </form>
-        <p>You do have an account?<Link to="/login" className="tologin">Login</Link></p>
+        <p>You do have an account?<Link to="/login" className="tolink">Login</Link></p>
       </div>
     </div>
   )

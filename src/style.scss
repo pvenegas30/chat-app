@@ -30,12 +30,26 @@ body {
   align-items: center;
   justify-content: center;
 
+
+  .tolink{
+
+    text-decoration: none;
+    margin-left: 5px;
+    color: #406882;
+
+    &:hover{
+
+      text-decoration: underline;
+    }
+  }
   .err{
     display: flex;
     justify-content: center;
     align-items: center;
     color: red;
     font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
   }
 
   .errsearch{
@@ -54,14 +68,15 @@ body {
     align-items: center;
 
     .logo {
-      color: #5d5b8d;
+      color: #406882;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 26px;
     }
 
     .title {
-      color: #5d5b8d;
-      font-size: 12px;
+      color: #1e405a;
+      font-size: 16px;
+      font-weight: 500;
     }
 
     form {
@@ -74,6 +89,14 @@ body {
         padding: 15px;
         border: none;
         border-bottom: 1px solid #a7bcff;
+        outline: none;
+
+        &:focus{
+
+          background: #edf1ff;
+
+        }
+        
         &::placeholder {
           color: rgb(175, 175, 175);
         }
@@ -82,10 +105,17 @@ body {
       button {
         cursor: pointer;
         border: none;
-        background-color: #7b96ec;
+        background-color: #406882;
         color: white;
         padding: 10px;
         font-weight: bold;
+        transition: all .2s ease;
+
+        &:hover{
+
+          background-color: #1e405a;
+          color: white;
+        }
       }
 
       label {
@@ -102,7 +132,7 @@ body {
       }
     }
     p {
-      color: #5d5b8d;
+      color: #112432;
       font-size: 12px;
       margin-top: 10px;
     }
@@ -118,8 +148,8 @@ body {
 
   .container {
     border-radius: 10px;
-    width: 65%;
-    height: 80%;
+    width: 70%;
+    height: 85%;
     display: flex;
     overflow: hidden;
 
