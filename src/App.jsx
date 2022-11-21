@@ -14,8 +14,7 @@ function App() {
     if (!currentUser) {
       return <Navigate to="/login" />;
     }
-
-    return children
+    return children;
   };
 
   return (
@@ -33,6 +32,7 @@ function App() {
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="/*" element={<span>Error 404: página no encontrada</span>} />
         </Route>
         </Routes>
       </BrowserRouter>

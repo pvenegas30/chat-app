@@ -12,9 +12,9 @@ const Chat = () => {
         <span>Jane</span>
 
         <div className="chatIcons">
-          <BsFillCameraVideoFill size={19}/>
-          <BsPersonPlusFill size={19}/>
-          <BsList size={21}/>
+          <BsFillCameraVideoFill size={19} title="Videollamada"/>
+          <BsPersonPlusFill size={19} title="Añadir al grupo"/>
+          <BsList size={21} title="Más"/>
         </div>
 
       </div>

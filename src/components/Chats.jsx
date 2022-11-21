@@ -3,6 +3,7 @@ import React from "react"
 const Chats = () => {
   return (
     <div className="chats">
+
       <div className="userChat">
         <img
           src="https://engineering.unl.edu/images/staff/Kayla-Person.jpg"
@@ -13,6 +14,7 @@ const Chats = () => {
           <span>Jane</span>
           <p>Hello</p>
         </div>
+        
       </div>
 
       <div className="userChat">
