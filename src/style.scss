@@ -134,6 +134,17 @@ body {
     letter-spacing: 1px;
   }
 
+  .err2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7b96ec;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
   .errsearch {
     color: rgb(240, 84, 84);
     font-weight: bold;
@@ -358,7 +369,7 @@ body {
           font-size: 14px;
 
           &:focus {
-            background: #1e405a;
+            background: #1a374d;
           }
 
           &::placeholder {
@@ -378,7 +389,7 @@ body {
       margin-bottom: 5px;
 
       &:hover {
-        background-color: #1a374d;
+        background-color: #1e405a;
       }
 
       img {
