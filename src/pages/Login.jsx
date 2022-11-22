@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import PedroVenegas from './../components/PedroVenegas';
 
 const Login = () => {
   const [err, setErr] = useState(false);
@@ -37,6 +38,8 @@ const Login = () => {
         <p>You don't have an account? <Link to="/register" className="tolink">Register</Link></p>
         
       </div>
+
+      <PedroVenegas/>
     </div>
   )
 }

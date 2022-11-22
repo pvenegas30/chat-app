@@ -11,6 +11,8 @@ const Home = () => {
         <Sidebar/>
         <Chat/>
 
+        
+
       </div>
     </div>
   )

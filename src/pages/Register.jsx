@@ -5,6 +5,7 @@ import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
+import PedroVenegas from './../components/PedroVenegas';
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -80,6 +81,7 @@ const Register = () => {
         </form>
         <p>You do have an account?<Link to="/login" className="tolink">Login</Link></p>
       </div>
+      <PedroVenegas/>
     </div>
   )
 }

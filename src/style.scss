@@ -29,7 +29,92 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
+  @include mobile {
+    height: 100vh;
+    padding: 10px;
+  }
+
+  .pedro {
+    background-color: white;
+    margin-top: 20px;
+    padding: 5px 110px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+
+    @include mobile {
+      margin: 0;
+      height: 70px;
+      background-color: transparent;
+      width: 50px;
+      border-radius: 15px;
+      padding: 40px 40px;
+      box-shadow: none;
+      -webkit-box-shadow: 0;
+      -moz-box-shadow: 0;
+    }
+
+    a {
+      font-size: 12px;
+      text-decoration: none;
+      color: #112432;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 0px 0px 10px 10px;
+
+      @include mobile {
+        display: none;
+      }
+
+    }
+
+    .github {
+      background: #406882;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 50px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 160%;
+      border-radius: 10px 10px 0px 0px;
+
+      @include mobile {
+        background: #fff;
+        width: 140px;
+        border-radius: 15px;
+        padding: 10px 40px;
+        
+      }
+
+      &:hover {
+        background: #1e405a;
+      }
+
+      a {
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        
+        @include mobile {
+          display: block;
+          font-size: 16px;
+          width: 100%;
+          color: #1e405a;
+        }
+      }
+    }
+  }
   .tolink {
     text-decoration: none;
     margin-left: 5px;
@@ -62,6 +147,18 @@ body {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+
+    @include mobile {
+      width: 65%;
+      border-radius: 0;
+      gap: 0;
+      height: 380px;
+      padding-top: 50px;
+      margin: 0;
+    }
 
     .logo {
       color: #406882;
@@ -114,6 +211,7 @@ body {
         padding: 10px;
         font-weight: bold;
         transition: all 0.2s ease;
+        border-radius: 4px;
 
         &:hover {
           background-color: #1e405a;
@@ -157,6 +255,9 @@ body {
     height: 85%;
     display: flex;
     overflow: hidden;
+    box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
 
     @include tablet {
       width: 90%;
@@ -285,9 +386,9 @@ body {
         height: 50px;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow: 1px 1px 10px -1px rgba(0,0,0,0.43);
-        -webkit-box-shadow: 1px 1px 10px -1px rgba(0,0,0,0.43);
-        -moz-box-shadow: 1px 1px 10px -1px rgba(0,0,0,0.43);
+        box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.43);
+        -webkit-box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.43);
+        -moz-box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.43);
       }
 
       .userChatInfo {
