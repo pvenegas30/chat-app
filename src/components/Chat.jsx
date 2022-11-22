@@ -9,7 +9,7 @@ const Chat = () => {
       
       <div className="chatInfo">
 
-        <span>Jane</span>
+        <span className="titlecase1">Jane</span>
 
         <div className="chatIcons">
           <BsFillCameraVideoFill size={19} title="Videollamada"/>
