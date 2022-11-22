@@ -404,6 +404,7 @@ body {
 
       .userChatInfo {
         span {
+          text-transform: capitalize;
           font-size: 15px;
           font-weight: 500;
         }
@@ -432,6 +433,7 @@ body {
         font-weight: 500;
         letter-spacing: 2px;
         margin-left: 10px;
+        text-transform: capitalize;
       }
     }
 
