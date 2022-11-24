@@ -74,6 +74,12 @@ const Input = () => {
     setImg(null);
   };
 
+  const alertImage = (e) => {
+
+    alert("Hola, para enviar una imagen tienes que escoger una de tu escritorio, y pulsar el botón 'Send'");
+
+  }
+
   return (
     <div className='input'>
       
@@ -95,7 +101,7 @@ const Input = () => {
           onChange={(e) => setImg(e.target.files[0])}
         />
 
-      <label htmlFor='file'>
+      <label htmlFor='file' onClick={alertImage}>
         <FaImage/>
       </label>
 

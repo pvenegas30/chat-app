@@ -78,12 +78,18 @@ const Search = () => {
     setUsername("")
   };
 
+  const alertUse = (e) => {
+
+    alert("Hola, para utilizar esta Chat App es necesario buscar a un usuario con el que puedas hablar, busca una persona que se haya registrado previamente o busca alguno de los siguientes usuarios: ElBicho7, John Cena, Victoria, Nicole, Pedro Venegas o Maiguel");
+
+  }
+
 
   return (
     <div className='search'>
       <div className='searchForm'>
 
-        <input type="text" placeholder='Find a user...' onKeyDown={handleKey} onChange={e=>setUsername(e.target.value)}/>
+        <input type="text" title="Find a user: ElBicho7, John Cena, Victoria, Nicole, Pedro Venegas o Maiguel" placeholder='Find a user...' onKeyDown={handleKey} onChange={e=>setUsername(e.target.value)} onClick={alertUse}/>
       </div>
 
       {err && <span className='errsearch'>User not found!</span>}
