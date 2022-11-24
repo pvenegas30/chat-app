@@ -16,8 +16,8 @@ const Chat = () => {
         <span>{data.user?.displayName}</span>
 
         <div className="chatIcons">
-          <BsFillCameraVideoFill size={19} title="Videollamada"/>
-          <BsPersonPlusFill size={19} title="Añadir al grupo"/>
+          <BsFillCameraVideoFill size={19} className='iconoff' title="Videollamada"/>
+          <BsPersonPlusFill className='iconoff' size={19} title="Añadir al grupo"/>
           <BsList size={21} title="Más"/>
         </div>
 

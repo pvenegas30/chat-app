@@ -1,4 +1,4 @@
-import { FaImage, FaPaperclip } from "react-icons/fa";
+import { FaLocationArrow, FaImage, FaPaperclip } from "react-icons/fa";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
@@ -86,7 +86,7 @@ const Input = () => {
     
     <div className="send">
 
-      <FaPaperclip/>
+      <FaPaperclip className="iconoff"/>
 
       <input
           type="file"
@@ -99,7 +99,7 @@ const Input = () => {
         <FaImage/>
       </label>
 
-      <button onClick={handleSend}>Send</button>
+      <button onClick={handleSend}><span className="iconoff">Send</span> <FaLocationArrow className="iconoff2"/></button>
     </div>
     
     </div>

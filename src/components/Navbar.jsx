@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import UserImage from "../assets/img/user1.png"
 import { auth } from "../firebase";
 import {signOut} from "firebase/auth"
 import { AuthContext } from './../context/AuthContext';
+import { FaPowerOff } from 'react-icons/fa';
 
 const Navbar = () => {
 
@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="user">
         <img src={currentUser.photoURL} alt="" />
         <span>{currentUser.displayName}</span>
-        <button onClick={()=>signOut(auth)}>logout</button>
+        <button onClick={()=>signOut(auth)}><span className='iconoff'>Logout</span> <FaPowerOff className='iconoff2'/></button>
       </div>
 
     </div>
