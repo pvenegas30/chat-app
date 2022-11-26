@@ -340,6 +340,7 @@ body {
 
           color: #112432;
         }
+
       }
 
 
@@ -352,6 +353,7 @@ body {
 
         @include mobile {
           margin-left: 10%;
+          bottom: 4%;
         }
 
         @include mintablet {
@@ -439,12 +441,19 @@ body {
           font-size: 12px;
           font-weight: 500;
 
+
           @include tablet{
 
             z-index: 1;
             position: fixed;
             bottom: 11%;
             margin-left: .5rem;
+          }
+
+          @include mobile {
+
+            bottom: 4%;
+
           }
 
           &:hover {
@@ -465,6 +474,10 @@ body {
             @include mobile {
               font-size: 20px;
               padding: 0;
+              color: #406882;
+              background: #fff;
+              border-radius: 100%;
+              padding: 4.5px;
             }
           }
 
@@ -575,6 +588,8 @@ body {
       img {
         width: 50px;
         height: 50px;
+        min-width: 50px;
+        min-height: 50px;
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.43);
@@ -584,6 +599,8 @@ body {
         @include tablet {
           width: 40px;
           height: 40px;
+          min-width: 40px;
+          min-height: 40px;
         }
       }
 
