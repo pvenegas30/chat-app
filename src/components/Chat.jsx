@@ -3,8 +3,9 @@ import { BsList, BsPersonPlusFill, BsFillCameraVideoFill } from "react-icons/bs"
 import Messages from './Messages';
 import Input from './Input';
 import { ChatContext } from './../context/ChatContext';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
-const Chat = () => {
+const Chat = ({setVisible}) => {
 
   const { data } = useContext(ChatContext);
 
@@ -13,6 +14,11 @@ const Chat = () => {
       
       <div className="chatInfo">
 
+        
+      <button className="open" onClick={() => setVisible(true)}>
+          <FaArrowCircleRight title='Open chats' size={28}/>
+        </button>
+        
         <span>{data.user?.displayName}</span>
 
         <div className="chatIcons">
@@ -24,6 +30,7 @@ const Chat = () => {
       </div>
 
       <Messages/>
+      
       <Input/>
       
     </div>

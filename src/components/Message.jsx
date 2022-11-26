@@ -17,6 +17,7 @@ const Message = ({ message }) => {
       ref={ref}
       className={`message ${message.senderId === currentUser.uid && "owner"}`}
     >
+      
       <div className="messageInfo">
         <img
           src={

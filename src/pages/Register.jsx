@@ -66,9 +66,9 @@ const Register = () => {
         <span className="logo">Chat App</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="display name" />
-          <input required type="email" placeholder="email" />
-          <input required type="password" placeholder="password" />
+          <input required type="text" placeholder="display name" title="Enter any username" />
+          <input required type="email" placeholder="email" className="email" title="Register with any email (doesn't matter if it doesn't exist)"/>
+          <input required type="password" placeholder="password" title="Enter a password"/>
           <input required style={{ display: "none" }} type="file" id="file" />
           
           <label htmlFor="file">

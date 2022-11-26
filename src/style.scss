@@ -3,6 +3,12 @@
     @content;
   }
 }
+
+@mixin mintablet {
+  @media screen and (max-width: 680px) {
+    @content;
+  }
+}
 @mixin tablet {
   @media screen and (max-width: 780px) {
     @content;
@@ -81,7 +87,6 @@ body {
       @include mobile {
         display: none;
       }
-
     }
 
     .github {
@@ -100,7 +105,6 @@ body {
         width: 140px;
         border-radius: 15px;
         padding: 10px 40px;
-        
       }
 
       &:hover {
@@ -112,7 +116,7 @@ body {
         color: white;
         text-decoration: none;
         text-align: center;
-        
+
         @include mobile {
           display: block;
           font-size: 16px;
@@ -141,8 +145,7 @@ body {
     letter-spacing: 1px;
   }
 
-  .err2{
-
+  .err2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,8 +269,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  @include mobile{
-
+  @include mobile {
     width: 100%;
   }
 
@@ -280,30 +282,28 @@ body {
     box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
     -webkit-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
     -moz-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
+    position: relative;
 
 
-    
     @include minlaptop() {
       width: 90%;
     }
     @include tablet {
       width: 90%;
     }
-    @include mobile{
+    @include mobile {
       border-radius: 0px;
       width: 100%;
       height: 100%;
     }
   }
 
-  .sidebar::-webkit-scrollbar{
-
+  .sidebar::-webkit-scrollbar {
     width: 7px;
     background-color: #112432;
   }
 
-  .sidebar::-webkit-scrollbar-thumb{
-
+  .sidebar::-webkit-scrollbar-thumb {
     background-color: #406882;
     border-radius: 5px;
   }
@@ -314,6 +314,55 @@ body {
     position: relative;
     overflow: auto;
 
+    @include mobile {
+      flex: 2;
+
+    }
+
+    @include mintablet {
+      
+      overflow-x: hidden;
+
+    }
+
+    .chats {
+      position: relative;
+
+      .close{
+
+        background: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &:hover{
+
+          color: #112432;
+        }
+      }
+
+
+      .button {
+        position: fixed;
+        bottom: 10%;
+        left: 33%;
+
+
+
+        @include mobile {
+          margin-left: 10%;
+        }
+
+        @include mintablet {
+          margin-right: 10px;
+        }
+
+        @include minlaptop {
+          left: 25%;
+        }
+      }
+    }
 
     .navbar {
       display: flex;
@@ -324,23 +373,20 @@ body {
       padding: 10px;
       color: #ddddf7;
 
-      .iconoff{
+      .iconoff {
         @include mobile {
           display: none;
         }
-
       }
 
-      .iconoff2{
-
+      .iconoff2 {
         color: white;
         @include laptop {
           display: none;
         }
-        @include mobile{
+        @include mobile {
           display: block;
         }
-
       }
 
       .logo {
@@ -348,8 +394,7 @@ body {
         font-size: 15px;
         margin-left: 5px;
 
-        @include minlaptop{
-
+        @include minlaptop {
           display: none;
         }
       }
@@ -360,7 +405,7 @@ body {
         align-items: center;
         gap: 10px;
 
-        @include minlaptop{
+        @include minlaptop {
           width: 100%;
           justify-content: space-between;
         }
@@ -368,18 +413,17 @@ body {
         span {
           text-transform: capitalize;
 
-          @include minlaptop{
+          @include minlaptop {
             font-size: 14px;
           }
-          @include tablet{
+          @include tablet {
             font-size: 16px;
           }
 
-          @include mobile{
+          @include mobile {
             font-size: 13px;
             text-align: right;
             width: 65%;
-  
           }
         }
 
@@ -395,53 +439,57 @@ body {
           font-size: 12px;
           font-weight: 500;
 
+          @include tablet{
+
+            z-index: 1;
+            position: fixed;
+            bottom: 11%;
+            margin-left: .5rem;
+          }
+
           &:hover {
             background: white;
             color: #406882;
           }
 
-          span{
-
+          span {
             margin-right: 5px;
 
+            @include tablet{
+
+              font-size: 12px;
+            }
           }
 
-
-          svg{
-
-            @include mobile{
-
+          svg {
+            @include mobile {
               font-size: 20px;
               padding: 0;
             }
           }
 
-          @include minlaptop{
-
-          margin-right: 0;
-          padding: 5px;
-          font-size: 6px;
+          @include minlaptop {
+            margin-right: 0;
+            padding: 5px;
+            font-size: 6px;
           }
 
-          @include tablet{
-
+          @include tablet {
             color: #406882;
             background: white;
-            }
+          }
 
-          @include mobile{
+          @include mobile {
+            border-radius: 100%;
+            padding: 5px 5px;
+            background: transparent;
+            color: white;
 
-              border-radius: 100%;
-              padding: 5px 5px;
+            &:hover {
               background: transparent;
-              color: white;
-
-              &:hover{
-
-                background: transparent;
-                color: #a7bcff;
-              }
+              color: #a7bcff;
             }
+          }
         }
       }
 
@@ -452,18 +500,15 @@ body {
         border-radius: 50%;
         object-fit: cover;
 
-        @include tablet{
+        @include tablet {
           height: 38px;
           width: 38px;
           margin-left: 5px;
-          
-          }
-          @include mobile{
-            height: 30px;
-            width: 30px;
-            
-            
-            }
+        }
+        @include mobile {
+          height: 30px;
+          width: 30px;
+        }
       }
 
       button {
@@ -522,7 +567,6 @@ body {
       color: white;
       cursor: pointer;
       margin-bottom: 5px;
-      
 
       &:hover {
         background-color: #1e405a;
@@ -537,10 +581,9 @@ body {
         -webkit-box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.43);
         -moz-box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.43);
 
-        @include tablet{
+        @include tablet {
           width: 40px;
           height: 40px;
-
         }
       }
 
@@ -551,10 +594,8 @@ body {
           font-size: 15px;
           font-weight: 500;
 
-
-          @include tablet{
+          @include tablet {
             font-size: 13px;
-  
           }
         }
         p {
@@ -578,6 +619,20 @@ body {
       padding: 10px;
       color: rgb(243, 243, 243);
 
+      .open{
+
+        background: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &:hover{
+
+          color: #a7bcff;
+        }
+      }
+
       span {
         font-size: 18px;
         font-weight: 500;
@@ -585,14 +640,12 @@ body {
         margin-left: 10px;
         text-transform: capitalize;
 
-        @include tablet{
+        @include tablet {
           font-size: 16px;
-
         }
 
-        @include mobile{
+        @include mobile {
           font-size: 13px;
-
         }
       }
     }
@@ -604,7 +657,7 @@ body {
       gap: 12px;
       margin-right: 16px;
 
-      @include mobile{
+      @include mobile {
         margin-right: 7px;
       }
 
@@ -616,26 +669,23 @@ body {
           color: #8da4f1;
         }
 
-        @include mobile{
+        @include mobile {
           width: 24px;
-
         }
       }
 
-      .iconoff{
+      .iconoff {
         @include mobile {
           display: none;
         }
       }
     }
-    .messages::-webkit-scrollbar{
-
+    .messages::-webkit-scrollbar {
       width: 7px;
       background-color: #1e405a;
     }
-  
-    .messages::-webkit-scrollbar-thumb{
-  
+
+    .messages::-webkit-scrollbar-thumb {
       background-color: #406882;
       border-radius: 5px;
     }
@@ -653,9 +703,7 @@ body {
       overflow-x: hidden;
 
       @include mobile {
-
-            height: calc(100% - 134px);
-
+        height: calc(100% - 134px);
       }
 
       .message {
@@ -672,7 +720,7 @@ body {
           span {
             font-size: 14px;
 
-            @include mobile{
+            @include mobile {
               font-size: 8px;
             }
           }
@@ -683,8 +731,7 @@ body {
             border-radius: 50%;
             object-fit: cover;
 
-            @include mobile{
-
+            @include mobile {
               width: 30px;
               height: 30px;
             }
@@ -697,14 +744,12 @@ body {
           gap: 10px;
 
           p {
-
             background-color: white;
             padding: 10px 20px;
             border-radius: 0px 10px 10px 10px;
             max-width: max-content;
 
-            @include mobile{
-
+            @include mobile {
               font-size: 10px;
               padding: 10px;
             }
@@ -726,8 +771,7 @@ body {
               background-color: #406882;
               color: white;
               border-radius: 10px 0px 10px 10px;
-              @include mobile{
-
+              @include mobile {
                 font-size: 11px;
               }
             }
@@ -743,9 +787,8 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      
-      @include mobile {
 
+      @include mobile {
         padding: 0;
         height: 44px;
       }
@@ -761,7 +804,6 @@ body {
         }
 
         @include mobile {
-
           font-size: 15px;
           margin-left: 10px;
         }
@@ -777,20 +819,20 @@ body {
           gap: 16px;
         }
 
-        .iconoff{
+        .iconoff {
           @include mobile {
             display: none;
           }
         }
 
-        .iconoff2{
+        .iconoff2 {
           display: none;
 
           color: white;
           @include laptop {
             display: none;
           }
-          @include mobile{
+          @include mobile {
             display: block;
           }
         }
@@ -807,10 +849,9 @@ body {
             color: #1e405a;
           }
 
-          @include mobile{
+          @include mobile {
             width: 18px;
           }
-          
         }
 
         button {
