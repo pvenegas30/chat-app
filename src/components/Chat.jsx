@@ -18,7 +18,6 @@ const Chat = ({setVisible}) => {
       <button className="open" onClick={() => setVisible(true)}>
           <FaArrowCircleRight title='Open chats' size={28}/>
         </button>
-        
         <span>{data.user?.displayName}</span>
 
         <div className="chatIcons">

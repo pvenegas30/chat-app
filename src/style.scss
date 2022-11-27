@@ -284,7 +284,6 @@ body {
     -moz-box-shadow: 1px 2px 13px 3px rgba(0, 0, 0, 0.39);
     position: relative;
 
-
     @include minlaptop() {
       width: 90%;
     }
@@ -316,40 +315,31 @@ body {
 
     @include mobile {
       flex: 2;
-
     }
 
     @include mintablet {
-      
       overflow-x: hidden;
-
     }
 
     .chats {
       position: relative;
 
-      .close{
-
+      .close {
         background: transparent;
         color: white;
         border: none;
         cursor: pointer;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
 
-        &:hover{
-
+        &:hover {
           color: #112432;
         }
-
       }
-
 
       .button {
         position: fixed;
         bottom: 10%;
         left: 33%;
-
-
 
         @include mobile {
           margin-left: 10%;
@@ -441,19 +431,15 @@ body {
           font-size: 12px;
           font-weight: 500;
 
-
-          @include tablet{
-
+          @include tablet {
             z-index: 1;
             position: fixed;
             bottom: 11%;
-            margin-left: .5rem;
+            margin-left: 0.5rem;
           }
 
           @include mobile {
-
             bottom: 4%;
-
           }
 
           &:hover {
@@ -464,8 +450,7 @@ body {
           span {
             margin-right: 5px;
 
-            @include tablet{
-
+            @include tablet {
               font-size: 12px;
             }
           }
@@ -485,6 +470,7 @@ body {
             margin-right: 0;
             padding: 5px;
             font-size: 6px;
+
           }
 
           @include tablet {
@@ -606,6 +592,7 @@ body {
 
       .userChatInfo {
         width: 100%;
+
         span {
           text-transform: capitalize;
           font-size: 15px;
@@ -616,6 +603,7 @@ body {
           }
         }
         p {
+          font-family: Arial, Helvetica, sans-serif;
           margin-top: 1px;
           font-size: 14px;
           color: lightgray;
@@ -636,16 +624,14 @@ body {
       padding: 10px;
       color: rgb(243, 243, 243);
 
-      .open{
-
+      .open {
         background: transparent;
         color: white;
         border: none;
         cursor: pointer;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
 
-        &:hover{
-
+        &:hover {
           color: #a7bcff;
         }
       }
@@ -734,12 +720,25 @@ body {
           color: gray;
           font-weight: 300;
 
-          span {
-            font-size: 14px;
+          .time{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
 
-            @include mobile {
-              font-size: 8px;
+            .day{
+
+              font-style: italic;
             }
+
+            span {
+              font-size: 12px;
+  
+              @include mobile {
+                font-size: 10px;
+              }
+          }
+
           }
 
           img {
@@ -761,13 +760,15 @@ body {
           gap: 10px;
 
           p {
+            font-family: Arial, Helvetica, sans-serif;
             background-color: white;
             padding: 10px 20px;
             border-radius: 0px 10px 10px 10px;
             max-width: max-content;
+            font-size: 14px;
 
             @include mobile {
-              font-size: 10px;
+              font-size: 11px;
               padding: 10px;
             }
           }
