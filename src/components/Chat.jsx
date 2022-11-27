@@ -21,9 +21,9 @@ const Chat = ({setVisible}) => {
         <span>{data.user?.displayName}</span>
 
         <div className="chatIcons">
-          <BsFillCameraVideoFill size={19} className='iconoff' title="Videollamada"/>
-          <BsPersonPlusFill className='iconoff' size={19} title="Añadir al grupo"/>
-          <BsList size={21} title="Más"/>
+          <BsFillCameraVideoFill size={19} className='iconoff' title="Video call (not available at the moment)"/>
+          <BsPersonPlusFill className='iconoff' size={19} title="Add to group (not available at the moment)"/>
+          <BsList size={21} title="(not available at the moment)"/>
         </div>
 
       </div>

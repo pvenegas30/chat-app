@@ -269,6 +269,38 @@ body {
   align-items: center;
   justify-content: center;
 
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .contact1 {
+      fill: white;
+      cursor: pointer;
+      margin-left: 30px;
+      margin-bottom: 20px;
+      transition: all .3s ease;
+
+      &:hover {
+        fill: cyan;
+      }
+    }
+
+    @include tablet {
+      padding: 0;
+      margin: 0;
+    }
+
+    @include mintablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
   @include mobile {
     width: 100%;
   }
@@ -339,7 +371,7 @@ body {
       .button {
         position: fixed;
         bottom: 10%;
-        left: 33%;
+        left: 27%;
 
         @include mobile {
           margin-left: 10%;
@@ -350,8 +382,12 @@ body {
           margin-right: 10px;
         }
 
+        @include tablet {
+          left: 20%;
+        }
+
         @include minlaptop {
-          left: 25%;
+          left: 23%;
         }
       }
     }
@@ -470,7 +506,6 @@ body {
             margin-right: 0;
             padding: 5px;
             font-size: 6px;
-
           }
 
           @include tablet {
@@ -720,25 +755,23 @@ body {
           color: gray;
           font-weight: 300;
 
-          .time{
+          .time {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
 
-            .day{
-
+            .day {
               font-style: italic;
             }
 
             span {
               font-size: 12px;
-  
+
               @include mobile {
                 font-size: 10px;
               }
-          }
-
+            }
           }
 
           img {

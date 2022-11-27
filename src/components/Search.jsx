@@ -80,7 +80,7 @@ const Search = () => {
 
   const alertUse = (e) => {
 
-    alert("Hola, para utilizar esta Chat App es necesario buscar a un usuario con el que puedas hablar, busca una persona que se haya registrado previamente o busca alguno de los siguientes usuarios: ElBicho7, John Cena, Victoria, Nicole, Pedro Venegas o Maiguel");
+    alert("Hola, para utilizar esta Chat App es necesario buscar a un usuario con el que puedas hablar, busca una persona que se haya registrado previamente o busca alguno de los siguientes usuarios: ElBicho7, John Cena, Victoria, Nicole, Pedro Venegas o Maiguel.\n \nEnglish: Hello, to use this Chat App it is necessary to search for a user with whom you can talk, search for a person who has previously registered or search for one of the following users: ElBicho7, John Cena, Victoria, Nicole, Pedro Venegas or Maiguel");
 
   }
 

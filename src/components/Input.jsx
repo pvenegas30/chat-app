@@ -76,7 +76,7 @@ const Input = () => {
 
   const alertImage = (e) => {
 
-    alert("Hola, para enviar una imagen tienes que escoger una de tu escritorio, y pulsar el botón 'Send'");
+    alert("Hola, para enviar una imagen tienes que escoger una de tu escritorio, y pulsar el botón 'Send'. \n \nEnglish: Hello, to send an image you have to choose one from your desktop, and press the 'Send' button");
 
   }
 
@@ -93,14 +93,9 @@ const Input = () => {
     
     <div className="send">
 
-      <FaPaperclip className="iconoff"/>
-
-      <input
-          type="file"
-          style={{ display: "none" }}
-          id="file"
-          onChange={(e) => setImg(e.target.files[0])}
-        />
+      <label htmlFor='file' id="file" onChange={(e) => setImg(e.target.files[0])}>
+      <FaPaperclip className="iconoff" title="(not available at the moment)"/>
+      </label>
 
       <label htmlFor='file' onClick={alertImage}>
         <FaImage/>
